@@ -192,6 +192,8 @@ jobs:
 
           cd ./common
           patch -p1 < 50_add_susfs_in_gki-${{ github.event.inputs.ANDROID_VERSION }}-${{ github.event.inputs.KERNEL_VERSION }}.patch || true
+          cd ./fs
+          wget -O namespace.c https://raw.githubusercontent.com/zy777777/Action_OnePlus_MKSU_SUSFS/refs/heads/main/.github/workflows/namespace.c
           echo "完成"
 
       - name: Apply Hide Stuff Patches
